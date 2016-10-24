@@ -418,6 +418,14 @@ button.addEventListener('click', function() {
 <script>
   "use strict";
   // put your code here
+
+  $("form").on('submit', function(event){
+    event.preventDefault();
+
+    var faveFood = $("#favorite-food-input").val();
+    $("#agreeable-text").text("I like " + faveFood + ", too.");
+  });
+
 </script>
 
 <div class="hint">
@@ -448,6 +456,26 @@ button.addEventListener('click', function() {
 <script>
   "use strict";
   // put your code here
+
+  $("#play-guessing-game").on("click", playGuessingGame);
+
+  function playGuessingGame(){
+    var randomNumber = Math.floor(Math.random() * 100 + 1);
+    var guessNum;
+
+    while(randomNumber !== guessNum){
+      guessNum = parseInt(prompt("Guess a number between 1 - 100"));
+
+      if(guessNum > randomNumber){
+        alert("Too high!");
+      } else if (guessNum < randomNumber){
+        alert("Too low!");
+      } else {
+        alert("That's correct!")
+      }
+    }
+  };
+
 </script>
 
 <div class="hint">
