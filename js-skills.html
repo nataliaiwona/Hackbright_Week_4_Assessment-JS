@@ -172,8 +172,8 @@
   var submitButton = document.getElementById('prevent-form-submission-button');
 
   function preventSubmit(evt) {
-    alert("Just an alert. Nothing more, nothing less.");
     evt.preventDefault();
+    alert("Just an alert. Nothing more, nothing less.");
   }
 
   submitButton.addEventListener('click', preventSubmit);
@@ -419,8 +419,8 @@ button.addEventListener('click', function() {
   "use strict";
   // put your code here
 
-  $("form").on('submit', function(event){
-    event.preventDefault();
+  $("form").on('submit', function(evt){
+    evt.preventDefault();
 
     var faveFood = $("#favorite-food-input").val();
     $("#agreeable-text").text("I like " + faveFood + ", too.");
